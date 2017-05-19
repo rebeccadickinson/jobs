@@ -4,10 +4,9 @@ function upload_image($file,$fileArrayName) {
 	
 	$target_dir = "uploads/";
 	$target_file= $target_dir.basename($_FILES[$fileArrayName]['name']);
-	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	$cvFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		
-		if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-		&& $imageFileType != "gif" ) {
+		if($cvFileType != "doc" && $cvFileType != "docx" && $cvFileType != "pdf") {
 			$upload_ok = false;
 			$imgName = 'bad';
 		}
